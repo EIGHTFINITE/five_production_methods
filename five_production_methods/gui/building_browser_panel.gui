@@ -2065,7 +2065,7 @@ types building_browser_panel_types
 								}
 
 								sort_button = {
-									size = { 210 30 }
+									size = { 182 30 }
 									text = "OWNERSHIP"
 									tooltip = "SORT_BY_OWNERSHIP"
 									align = nobaseline
@@ -2081,7 +2081,7 @@ types building_browser_panel_types
 								}
 
 								sort_button = {
-									size = { 220 30 }
+									size = { 258 30 }
 									text = "concept_production_methods"
 									tooltip = "SORT_BY_PRODUCTION_METHODS"
 									align = nobaseline
@@ -2129,7 +2129,7 @@ types building_browser_panel_types
 								}
 
 								sort_button = {
-									size = { 191 30 }
+									size = { 181 30 }
 									text = "INTERACTIONS"
 									tooltip = "SORT_BY_BUILDING_INTERACTIONS"
 									align = nobaseline
@@ -3122,9 +3122,19 @@ types building_browser_panel_types {
 		vertical_divider = {}
 
 		widget = {
-			size = { 220 @spreadsheet_height }
+			size = { 258 @spreadsheet_height }
 			condensed_building_information_pms = {
-				parentanchor = center
+				position = { 4 0 }
+				blockoverride "pms_slot_sizes" {
+					addcolumn = 50
+					addrow = 50
+				}
+				blockoverride "pms_minimumsize" {
+					minimumsize = { 200 -1 }
+				}
+				blockoverride "pms_item_size" {
+					size = { 50 50 }
+				}
 			}
 		}
 
@@ -3298,61 +3308,76 @@ types building_browser_panel_types {
 		vertical_divider = {}
 
 		widget = {
-			size = { 180 @spreadsheet_height }
+			size = { 170 @spreadsheet_height }
 
 			### ACTION BUTTONS
-			flowcontainer = {
+			container = {
 				parentanchor = vcenter
-				spacing = 10
-				margin = { 4 4 }
+				position = { 4 0 }
 
-				flowcontainer = {
-					### NATIONALIZE
-					widget = {
-						size = { 35 35 }
+				### NATIONALIZE
+				widget = {
+					size = { 35 35 }
 
-						building_nationalize_button = { 
-							parentanchor = center  
-						}
+					building_nationalize_button = { 
+						parentanchor = center  
 					}
+				}
+			}
 
-					### PRIVATIZE
-					widget = {
-						size = { 35 35 }
+			container = {
+				parentanchor = vcenter
+				position = { 38 0 }
 
-						building_privatize_toggle = {
-							parentanchor = center 
-						}
+				### PRIVATIZE
+				widget = {
+					size = { 35 35 }
+
+					building_privatize_toggle = {
+						parentanchor = center 
 					}
+				}
+			}
 
-					### SUBSIDIZE
-					widget = {
-						size = { 35 35 }
+			container = {
+				parentanchor = vcenter
+				position = { 72 0 }
 
-						building_subsidize_toggle = {
-							parentanchor = center
-						}
+				### SUBSIDIZE
+				widget = {
+					size = { 35 35 }
+
+					building_subsidize_toggle = {
+						parentanchor = center
 					}
+				}
+			}
 
-					### AUTOEXPAND
-					widget = {
-						size = { 35 35 }
+			container = {
+				parentanchor = vcenter
+				position = { 106 0 }
 
-						building_auto_expand_toggle = {
-							parentanchor = center
-						}
+				### AUTOEXPAND
+				widget = {
+					size = { 35 35 }
+
+					building_auto_expand_toggle = {
+						parentanchor = center
 					}
-					
-					widget = { size = { 5 5 }}
+				}
+			}
 
-					button_icon_goto = {
-						parentanchor = vcenter
-						size = { 30 30 }
-						using = tooltip_above
-						tooltip = "GO_TO_DETAILS"
-						visible = "[Building.IsValid]"
-						onclick = "[InformationPanelBar.OpenBuildingDetailsPanel(Building.AccessSelf)]"
-					}
+			container = {
+				parentanchor = vcenter
+				position = { 140 0 }
+
+				button_icon_goto = {
+					parentanchor = vcenter
+					size = { 30 30 }
+					using = tooltip_above
+					tooltip = "GO_TO_DETAILS"
+					visible = "[Building.IsValid]"
+					onclick = "[InformationPanelBar.OpenBuildingDetailsPanel(Building.AccessSelf)]"
 				}
 			}
 		}
@@ -3411,7 +3436,7 @@ types building_browser_panel_types {
 					section_header_button = {
 
 						blockoverride "layout" {
-							size = { 420 @spreadsheet_header_height }
+							size = { 392 @spreadsheet_header_height }
 						}
 
 						blockoverride "fontsize" {
@@ -3476,15 +3501,15 @@ types building_browser_panel_types {
 					vertical_divider = {}
 
 					widget = {
-						size = { 220 @spreadsheet_header_height }
+						size = { 258 @spreadsheet_header_height }
 						parentanchor = vcenter
 
 						fixedgridbox = {
 							datamodel = "[BuildingBrowserBuildingTypeItem.GetBuildingType.AccessProductionMethodGroups]"
 							flipdirection = yes
-							addcolumn = 52
+							addcolumn = 50
 							addrow = 50
-							position = { 6 0 }
+							position = { 4 0 }
 							parentanchor = vcenter
 
 							item = {
@@ -3604,12 +3629,12 @@ types building_browser_panel_types {
 					vertical_divider = {}
 
 					widget = {
-						size = { 150 @spreadsheet_header_height }
+						size = { 141 @spreadsheet_header_height }
 						parentanchor = vcenter
 
-						flowcontainer = {
+						container = {
 							parentanchor = vcenter
-							margin = { 4 4 }
+							position = { 4 0 }
 
 							widget = {
 								size = { 35 35 }
@@ -3617,6 +3642,11 @@ types building_browser_panel_types {
 									parentanchor = center
 								}
 							}
+						}
+
+						container = {
+							parentanchor = vcenter
+							position = { 38 0 }
 
 							### privatize
 							widget = {
@@ -3626,6 +3656,11 @@ types building_browser_panel_types {
 									parentanchor = center
 								}
 							}
+						}
+
+						container = {
+							parentanchor = vcenter
+							position = { 72 0 }
 
 							### subsidize
 							widget = {
@@ -3635,6 +3670,11 @@ types building_browser_panel_types {
 									parentanchor = center
 								}
 							}
+						}
+
+						container = {
+							parentanchor = vcenter
+							position = { 106 0 }
 
 							### Auto Expand
 							widget = {
@@ -3742,7 +3782,7 @@ types building_browser_panel_types {
 	}
 
 	type building_browser_item_ownership_area = widget {
-		size = { 210 @spreadsheet_height }
+		size = { 182 @spreadsheet_height }
 
 		# under construction
 		textbox = {
@@ -3764,7 +3804,7 @@ types building_browser_panel_types {
 			building_ownership_or_property_portfolio_stacked_barchart_short = {
 				parentanchor = center
 				blockoverride "barchart_size" {
-					size = { 200 40 }
+					size = { 172 40 }
 				}
 			}
 

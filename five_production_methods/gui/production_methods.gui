@@ -80,7 +80,7 @@ types production_methods
 				fixedgridbox = {
 					datamodel = "[BuildingBrowserBuildingTypeItem.GetBuildingType.AccessProductionMethodGroups]"
 					flipdirection = yes
-					addcolumn = 52
+					addcolumn = 50
 					addrow = 50
 
 					item = {
@@ -165,14 +165,13 @@ types production_methods
 			}
 
 			### ACTION BUTTONS
-			flowcontainer = {
+			container = {
 				parentanchor = bottom|right
-				position = { -10 -5 }
-				spacing = 5
+				position = { -154 -6 }
 
 				### expand
 				button_icon_round_map_interaction = {
-					size = { 40 40 }
+					size = { 38 38 }
 					blockoverride "icon" {
 						texture = "gfx/interface/buttons/button_icons/plus.dds"
 					}
@@ -183,25 +182,45 @@ types production_methods
 					tooltip = "EXPAND"
 					using = tooltip_se
 				}
-				
+			}
+
+			container = {
+				parentanchor = bottom|right
+				position = { -117 -6 }
+
 				### nationalize
 				building_type_nationalize_button = {
-					size = { 40 40 }
+					size = { 38 38 }
 				}
+			}
+
+			container = {
+				parentanchor = bottom|right
+				position = { -80 -6 }
 
 				### privatize
 				building_type_privatize_toggle = {
-					size = { 40 40 }
+					size = { 38 38 }
 				}
+			}
+
+			container = {
+				parentanchor = bottom|right
+				position = { -43 -6 }
 
 				### subsidize
 				building_type_subsidize_toggle = {
-					size = { 40 40 } 
+					size = { 38 38 } 
 				}
+			}
+
+			container = {
+				parentanchor = bottom|right
+				position = { -6 -6 }
 
 				### auto expand
 				building_type_auto_expand_toggle = {
-					size = { 40 40 } 
+					size = { 38 38 } 
 				}
 			}
 
