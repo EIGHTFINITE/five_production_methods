@@ -1,0 +1,12 @@
+{
+  "name" : "five_production_methods",
+  "id" : "",
+  "version" : "1.0",
+  "supported_game_version" : "",
+  "short_description" : "",
+  "tags" : ["Fixes","Graphics","Utilities","UI"],
+  "relationships" : [],
+  "game_custom_data" : {
+    "multiplayer_synchronized" : true
+  }
+}
